@@ -32,13 +32,7 @@ export class LoginComponent {
 
     var usuario = this.formLogin.getRawValue() as IUsuario;
     this.usuarioService.logar(usuario).subscribe((response) => {
-      if (!response.sucesso) {
-        console.log('erro');
-
-        // this.snackBar.open('Falha na autenticação', 'Usuário ou senha incorretos.', {
-        //   duration: 3000
-        // });
-      }
+      
     }, error => {
       console.log('erro');
     });

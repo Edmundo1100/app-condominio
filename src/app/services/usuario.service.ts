@@ -17,16 +17,13 @@ export class UsuarioService {
     private router: Router) { }
 
   logar(usuario: IUsuario): Observable<any> {
-    
+
 
     return this.httpClient.post<any>(apiUrlUsuario + "/login", usuario).pipe(
       tap((resposta) => {
-        if(!resposta.sucesso) return;
-
-        localStorage.setItem('token', window.btoa(JSON.stringify(resposta['token'])));
-        localStorage.setItem('usuario', window.btoa(JSON.stringify(resposta['usuario'])));
-
-        this.router.navigate(['']);
+          localStorage.setItem('token', window.btoa(JSON.stringify(resposta.response['token'])));
+          localStorage.setItem('usuario', window.btoa(JSON.stringify(usuario)));
+          this.router.navigate(['']);
       }));
 
     // return this.mockUsuarioLogin(usuario).pipe(tap((resposta) => {
