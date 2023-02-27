@@ -1,0 +1,22 @@
+.box-title {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+.box-card {
+    margin: 5px;
+    height: calc(100vh - 74px);
+}
+.painel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box-content {
+    display: flex;
+    justify-content: center;
+}
+.box-footer {
+   display: flex;
+   justify-content: center;
+}

@@ -1,0 +1,21 @@
+.box-body{
+  height: calc(100vh - 64px);
+}
+
+.box-spacer {
+  flex: 1 1 auto;
+}
+
+.box-container {
+  height: 100%;
+  width: 100%;
+}
+
+.box-sidenav {
+  padding: 20px;
+}
+
+.box-sidenav-content {
+  height: 100%;
+}
+

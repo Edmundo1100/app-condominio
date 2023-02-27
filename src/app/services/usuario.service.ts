@@ -17,14 +17,16 @@ export class UsuarioService {
     private router: Router) { }
 
   logar(usuario: IUsuario): Observable<any> {
-
-
     return this.httpClient.post<any>(apiUrlUsuario + "/login", usuario).pipe(
       tap((resposta) => {
-          localStorage.setItem('token', window.btoa(JSON.stringify(resposta.response['token'])));
-          localStorage.setItem('usuario', window.btoa(JSON.stringify(usuario)));
-          this.router.navigate(['']);
+        localStorage.setItem('token', window.btoa(JSON.stringify(resposta.response['token'])));
+        localStorage.setItem('usuario', window.btoa(JSON.stringify(usuario)));
+        this.router.navigate(['']);
       }));
+  }
+
+  salvar(usuario: IUsuario): Observable<any> {
+    return this.httpClient.post<any>(apiUrlUsuario + "/cadastrar", usuario)
   }
 
   // deslogar() {
@@ -61,8 +63,8 @@ export class UsuarioService {
   //   }
   // }
 
-  // get logado(): boolean {
-  //   return localStorage.getItem('token') ? true : false;
-  // }
+  get logado(): boolean {
+    return localStorage.getItem('token') ? true : false;
+  }
 }
 

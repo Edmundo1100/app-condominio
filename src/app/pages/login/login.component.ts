@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUsuario } from '../../interfaces/IUsuario';
 import { UsuarioService } from '../../services/usuario.service';
@@ -8,7 +8,7 @@ import { UsuarioService } from '../../services/usuario.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   formLogin!: FormGroup;
 
@@ -29,12 +29,10 @@ export class LoginComponent {
 
   logar() {
     if (this.formLogin.invalid) return;
-
     var usuario = this.formLogin.getRawValue() as IUsuario;
-    this.usuarioService.logar(usuario).subscribe((response) => {
-      
-    }, error => {
-      console.log('erro');
+    this.usuarioService.logar(usuario).subscribe({
+      next: value => console.log(value),
+      error: error => console.log(error),
     });
   }
 }

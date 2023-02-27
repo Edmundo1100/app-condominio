@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
+import { CadastroUsuariosComponent } from './pages/usuarios/cadastro-usuarios/cadastro-usuarios.component';
 import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
 import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autenticado.guard';
 
@@ -11,10 +12,13 @@ const routes: Routes = [
   {
     path: '', component: PrincipalComponent, canActivate: [UsuarioAutenticadoGuard],
     children: [
-      { path: '', component: HomeComponent }
-    ],
+      { path: '', component: HomeComponent },
+      { path: 'cadastroUsuario', component: CadastroUsuariosComponent }
+    ]
   },
+  { path: '**', redirectTo: '' }
 ];
+
 
 
 @NgModule({
