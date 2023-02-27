@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../../shared/shared.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '../../services/interceptors/token.interceptor';
 
 
 
@@ -18,5 +20,6 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     SharedModule
   ]
+
 })
 export class UsuariosModule { }

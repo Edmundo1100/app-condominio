@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { TokenInterceptor } from './services/interceptors/token.interceptor';
 
 
 @NgModule({
@@ -28,7 +29,6 @@ import {MatListModule} from '@angular/material/list';
     SharedModule,
     UsuariosModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

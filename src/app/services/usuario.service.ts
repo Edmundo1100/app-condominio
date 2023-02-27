@@ -29,10 +29,10 @@ export class UsuarioService {
     return this.httpClient.post<any>(apiUrlUsuario + "/cadastrar", usuario)
   }
 
-  // deslogar() {
-  //   localStorage.clear();
-  //   this.router.navigate(['login']);
-  // }
+  deslogar() {
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
 
   // obterUsuarioLogado() {
   //   const usuario = localStorage.getItem('usuario');
@@ -54,7 +54,7 @@ export class UsuarioService {
   //   }
   // }
 
-  // get obterTokenUsuario(): string | null {
+  // get obterTokenUsuario(): any {
   //   const token = localStorage.getItem('token')
   //   if (token) {
   //     return JSON.parse(window.atob(token))
