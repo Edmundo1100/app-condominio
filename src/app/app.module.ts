@@ -1,5 +1,3 @@
-import { UsuariosModule } from './pages/usuarios/usuarios.module';
-import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +10,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { TokenInterceptor } from './services/interceptors/token.interceptor';
+import { UsuariosModule } from './pages/usuarios/usuarios.module';
+import { AppRoutingModule } from './app-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -23,12 +28,23 @@ import { TokenInterceptor } from './services/interceptors/token.interceptor';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    SharedModule,
-    UsuariosModule
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule,
+
+    UsuariosModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // providers: [
+  //   { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  // ],
 })
 export class AppModule { }

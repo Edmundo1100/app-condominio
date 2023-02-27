@@ -1,10 +1,8 @@
-import { ListarUsuariosComponent } from './pages/usuarios/listar-usuarios/listar-usuarios.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
-import { CadastroUsuariosComponent } from './pages/usuarios/cadastro-usuarios/cadastro-usuarios.component';
 import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
 import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autenticado.guard';
 
@@ -14,8 +12,7 @@ const routes: Routes = [
     path: '', component: PrincipalComponent, canActivate: [UsuarioAutenticadoGuard],
     children: [
       { path: '', component: HomeComponent },
-      { path: 'listarUsuarios', component: ListarUsuariosComponent },
-      { path: 'cadastroUsuario', component: CadastroUsuariosComponent }
+      { path: 'usuarios', loadChildren: () => import('./pages/usuarios/usuarios.module').then(m => m.UsuariosModule) },
     ]
   },
   { path: '**', redirectTo: '' }
