@@ -10,12 +10,14 @@ import { SharedModule } from '../../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../../services/interceptors/token.interceptor';
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
+import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
 
 
 
 @NgModule({
   declarations: [
     CadastroUsuariosComponent,
+    ListarUsuariosComponent,
   ],
   imports: [
     SharedModule

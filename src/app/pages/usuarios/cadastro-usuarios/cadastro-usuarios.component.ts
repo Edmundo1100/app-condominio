@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoadingService } from './../../../services/loading-service.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,8 @@ export class CadastroUsuariosComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
     private snackBar: MatSnackBar,
-    private load: LoadingService
+    private load: LoadingService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -43,10 +45,10 @@ export class CadastroUsuariosComponent implements OnInit {
 
   usuarioSalvoSucess() {
     this.load.hide();
-    this.snackBar.open('Sussesso', 'OK', {
+    this.snackBar.open('Sussesso', 'Salvo', {
       duration: 4000
     });
-
+    this.router.navigate(['home']);
   }
 
   alertaErro(mensagem: any) {

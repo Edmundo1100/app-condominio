@@ -8,25 +8,33 @@
         </button>
         <span>QUINTA DA BOA VISTA 1</span>
         <span class="box-spacer"></span>
-        <button mat-icon-button>
-            <mat-icon>favorite</mat-icon>
-        </button>
         <button mat-icon-button (click)="deslogar()">
             <mat-icon>login</mat-icon>
         </button>
     </mat-toolbar>
 </div>
 <!-- ======================================================================================================= -->
-<!-- CORTO COM MENU -->
+<!-- CORPO COM MENU -->
 <!-- ======================================================================================================= -->
 <div class="box-body">
     <mat-drawer-container class="box-container" autosize>
         <mat-drawer #drawer class="box-sidenav" mode="side" [opened]="menuAberto">
-            <mat-nav-list>
-                <a mat-list-item routerLink="cadastroUsuario">Cadastro de Usuário</a>
-                <a mat-list-item routerLink="">Churrasqueira</a>
-                <a mat-list-item routerLink="">Gás</a>
-            </mat-nav-list>
+            <div class="box-button">
+                <button class="btn-menu-list" mat-raised-button routerLink="listarUsuarios"
+                    [ngClass]="{ 'btn-selecionado': isLinkActive('cadastroUsuario') }">
+                    <mat-icon>person</mat-icon>
+                    <span>Usuários</span>
+                </button>
+                <button class="btn-menu-list" mat-raised-button routerLink=""
+                    [ngClass]="{ 'btn-selecionado': isLinkActive('e') }">
+                    <mat-icon>restaurant</mat-icon>
+                    <span>Churrasqueira</span>
+                </button>
+                <button class="btn-menu-list" mat-raised-button routerLink="">
+                    <mat-icon>local_fire_department</mat-icon>
+                    <span>Gás</span>
+                </button>
+            </div>
         </mat-drawer>
         <router-outlet></router-outlet>
     </mat-drawer-container>

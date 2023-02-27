@@ -3,15 +3,14 @@
   <div class="painel">
 
     <mat-card-content class="box-content">
-      <form [formGroup]="formUsuario">
+      <form [formGroup]="formUsuario" autocomplete="off">
         <mat-form-field>
           <mat-label>Nome</mat-label>
-          <input matInput placeholder="Nome do usuário" autocomplete="off" formControlName="usuario">
+          <input matInput placeholder="Nome do usuário" formControlName="usuario">
         </mat-form-field>
-
         <mat-form-field>
           <mat-label>Senha</mat-label>
-          <input matInput type="password" placeholder="Senha do usuário" autocomplete="off" formControlName="senha">
+          <input matInput type="password" placeholder="Senha do usuário" formControlName="senha" (keyup.enter)="salvar()">
         </mat-form-field>
       </form>
     </mat-card-content>
@@ -26,7 +25,6 @@
         Salvar
       </button>
     </mat-card-actions>
-  
+
   </div>
 </mat-card>
-

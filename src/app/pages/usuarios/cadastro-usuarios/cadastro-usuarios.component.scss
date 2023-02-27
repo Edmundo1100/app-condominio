@@ -7,7 +7,7 @@
     margin: 5px;
     height: calc(100vh - 74px);
 }
-.painel{
+.painel {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,7 +16,42 @@
     display: flex;
     justify-content: center;
 }
+
 .box-footer {
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+// #####################################################################
+form {
+    width: 100%;
+}
+mat-form-field{
+    padding-left: 5px;
+}
+// #####################################################################
+//  CELULAR ############################################################
+// #####################################################################
+@media screen and (max-width: 767px) {
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+// #####################################################################
+// TABLET ##############################################################
+// #####################################################################
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    mat-form-field {
+        width: 50%;
+    }
+}
+
+// #####################################################################
+// DESKTOP #############################################################
+// #####################################################################
+@media screen and (min-width: 992px) {
+    mat-form-field {
+        width: 50%;
+    }
 }
