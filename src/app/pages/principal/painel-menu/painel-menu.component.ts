@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api/menuitem';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-painel-menu',
@@ -10,38 +9,32 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class PainelMenuComponent {
   items!: MenuItem[];
-  faCoffee = faCoffee;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.items = [
       {
         label: 'Usuários',
-        icon: 'fa fa-coffee',
+        icon: 'fa-solid fa-users',
+        routerLink: [''],
         items: [
           {
-            label: 'Listar',
-            icon: 'pi pi-coffee',
+            label: 'Listar Usuários',
+            icon: 'fa-solid fa-users-between-lines',
             routerLink: ['usuarios']
           },
           {
-            label: 'New',
-            icon: 'pi pi-fw pi-plus',
-            items: [
-              { label: 'User', icon: 'pi pi-fw pi-user-plus' },
-              { label: 'Filter', icon: 'pi pi-fw pi-filter' }
-            ]
+            label: 'Novo Usuário',
+            icon: 'fa-solid fa-user-plus',
+            routerLink: ['']
           },
-          { separator: true },
-          {
-            label: 'Quit',
-            icon: 'pi pi-fw pi-times',
-            command: () => {
-              this.router.navigate(['']);
-            }
-          }
         ]
+      },
+      {
+        label: 'Quit',
+        icon: 'pi pi-fw pi-times',
+        routerLink: ['']
       }
     ];
   }
