@@ -1,3 +1,4 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrincipalComponent } from './principal.component';
@@ -23,7 +24,8 @@ const telas = [
     CommonModule,
     SharedModule,
     MenubarModule,
-    PanelMenuModule
+    PanelMenuModule,
+    FontAwesomeModule
   ]
 })
 export class PrincipalModule { }

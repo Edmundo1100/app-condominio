@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { TokenInterceptor } from './services/interceptors/token.interceptor';
 import { UsuariosModule } from './pages/usuarios/usuarios.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -33,14 +34,9 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     PrincipalModule,
 
-    // MatToolbarModule,
-    // MatSidenavModule,
-    // MatListModule,
-    // MatProgressSpinnerModule,
-    // MatIconModule,
-    // MatButtonModule,
 
     UsuariosModule,
+    FontAwesomeModule,
   ],
   bootstrap: [AppComponent],
   // providers: [

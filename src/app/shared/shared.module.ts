@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // PRIMENG
 import { InputTextModule } from 'primeng/inputtext';
@@ -15,7 +15,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ReactiveFormsModule,
 
     // PRIMENG
-    InputTextModule
+    InputTextModule,
+    FontAwesomeModule,
   ],
   // providers: [
   //   { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
