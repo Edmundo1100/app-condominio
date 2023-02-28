@@ -1,9 +1,9 @@
+import { PrincipalModule } from './pages/principal/principal.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PrincipalComponent } from './pages/principal/principal.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,7 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
     HomeComponent,
     LoginComponent
   ],
@@ -32,13 +31,14 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    PrincipalModule,
 
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatButtonModule,
+    // MatToolbarModule,
+    // MatSidenavModule,
+    // MatListModule,
+    // MatProgressSpinnerModule,
+    // MatIconModule,
+    // MatButtonModule,
 
     UsuariosModule,
   ],

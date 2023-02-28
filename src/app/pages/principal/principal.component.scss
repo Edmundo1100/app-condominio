@@ -1,9 +1,14 @@
-.box-body{
-  height: calc(100vh - 64px);
+.box-menu-bar {
+  margin-bottom: 5px;
 }
-
-.box-spacer {
-  flex: 1 1 auto;
+.box-conteiner {
+  display: flex;
+}
+.box-menu-painel {
+ 
+}
+.box-rotas {
+  height: calc(100vh - 75px);
 }
 
 .box-container {
@@ -15,19 +20,19 @@
   height: 100%;
 }
 
-.btn-selecionado{
+.btn-selecionado {
   // background-color: #673AB7 !important;
   border-left-style: solid !important;
   border-left-width: 6px !important;
-  border-left-color: #673AB7 !important;
+  border-left-color: #673ab7 !important;
 }
 
 // MENU =========================================================
-.box-button{
+.box-button {
   display: flex;
   flex-direction: column;
 }
-.btn-menu-list{
+.btn-menu-list {
   margin-bottom: 5px;
   display: flex;
   justify-content: flex-start;
@@ -36,29 +41,27 @@
 form {
   width: 100%;
 }
-mat-form-field{
+mat-form-field {
   padding-left: 5px;
 }
 // ===================================================================
-//  CELULAR 
+//  CELULAR
 // ===================================================================
 @media screen and (max-width: 767px) {
   .box-sidenav {
     padding: 20px;
     width: 100%;
   }
-  
 }
 
 // ===================================================================
-// TABLET 
+// TABLET
 // ===================================================================
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .box-sidenav {
     padding: 20px;
     width: 30%;
   }
-  
 }
 
 // ===================================================================
@@ -69,5 +72,4 @@ mat-form-field{
     padding: 20px;
     width: 20%;
   }
-  
 }

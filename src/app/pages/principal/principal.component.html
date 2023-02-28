@@ -1,41 +1,18 @@
 <!-- ======================================================================================================= -->
 <!-- TOPO -->
 <!-- ======================================================================================================= -->
-<div class="box-title">
-    <mat-toolbar color="primary">
-        <button mat-icon-button (click)="drawer.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <span>QUINTA DA BOA VISTA 1</span>
-        <span class="box-spacer"></span>
-        <button mat-icon-button (click)="deslogar()">
-            <mat-icon>login</mat-icon>
-        </button>
-    </mat-toolbar>
+<div class="box-menu-bar">
+    <app-menu-bar></app-menu-bar>
 </div>
 <!-- ======================================================================================================= -->
 <!-- CORPO COM MENU -->
 <!-- ======================================================================================================= -->
-<div class="box-body">
-    <mat-drawer-container class="box-container" autosize>
-        <mat-drawer #drawer class="box-sidenav" mode="side" [opened]="menuAberto">
-            <div class="box-button">
-                <button class="btn-menu-list" mat-raised-button routerLink="usuarios"
-                    [ngClass]="{ 'btn-selecionado': isLinkActive('usuarios') }">
-                    <mat-icon>person</mat-icon>
-                    <span>Usuários</span>
-                </button>
-                <button class="btn-menu-list" mat-raised-button routerLink=""
-                    [ngClass]="{ 'btn-selecionado': isLinkActive('e') }">
-                    <mat-icon>restaurant</mat-icon>
-                    <span>Churrasqueira</span>
-                </button>
-                <button class="btn-menu-list" mat-raised-button routerLink="">
-                    <mat-icon>local_fire_department</mat-icon>
-                    <span>Gás</span>
-                </button>
-            </div>
-        </mat-drawer>
+<div class="box-conteiner">
+
+    <div class="box-menu-painel col-md-3">
+        <app-painel-menu></app-painel-menu>
+    </div>
+    <div class="box-rotas col-md-9">
         <router-outlet></router-outlet>
-    </mat-drawer-container>
+    </div>
 </div>
