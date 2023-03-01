@@ -39,8 +39,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
   ],
   bootstrap: [AppComponent],
-  // providers: [
-  //   { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
-  // ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
 })
 export class AppModule { }

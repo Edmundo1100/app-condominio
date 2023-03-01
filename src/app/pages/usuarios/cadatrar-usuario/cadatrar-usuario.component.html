@@ -1,22 +1,25 @@
-<p-panel header="Cadastrar Usuário">
-    <div class="conteudo">
-        <div class="field col-12 col-md-6 px-2 py-3">
-            <span class="p-float-label">
-                <input id="float-input-invalid" type="text" pInputText class="ng-invalid ng-dirty" style="width: 100%;">
-                <label for="float-input-invalid">Usuário</label>
-            </span>
+<form [formGroup]="formUsuario">
+    <p-panel header="Cadastrar Usuário">
+        <div class="conteudo">
+            <div class="field col-12 col-md-6 px-2 py-3">
+                <span class="p-float-label">
+                    <input id="float-input-invalid" type="text" pInputText style="width: 100%;"
+                        ngInvalidDirty="invalid-dirty" formControlName="usuario">
+                    <label for="float-input-invalid">Usuário *</label>
+                </span>
+            </div>
+            <div class="field col-12 col-md-6 px-2 py-3">
+                <span class="p-float-label">
+                    <input type="text" id="inputtext" pInputText style="width: 100%;" formControlName="senha">
+                    <label for="inputtext">Senha *</label>
+                </span>
+            </div>
         </div>
-        <div class="field col-12 col-md-6 px-2 py-3">
-            <span class="p-float-label">
-                <input type="text" id="inputtext" pInputText style="width: 100%;">
-                <label for="inputtext">Senha</label>
-            </span>
+        <div class="footer">
+            <button pButton type="button" icon="fa-solid fa-xmark" iconPos="left" class="p-button-text p-button-danger "
+                label="Cancelar" routerLink=""></button>
+            <button pButton type="button" icon="fa-solid fa-check" iconPos="left"
+                class="p-button-text p-button-success " label="Salvar" (click)="salvar()"></button>
         </div>
-    </div>
-    <div class="footer">
-        <button pButton type="button" icon="fa-solid fa-xmark" iconPos="left" class="p-button-text p-button-danger "
-            label="Cancelar"></button>
-        <button pButton type="button" icon="fa-solid fa-check" iconPos="left" class="p-button-text p-button-success "
-            label="Salvar"></button>
-    </div>
-</p-panel>
+    </p-panel>
+</form>
