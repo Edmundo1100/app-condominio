@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
+import { MensagemService } from './../../services/mensagem.service';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
-// ICONS 
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
-
 
 export interface PeriodicElement {
   name: string;
@@ -19,12 +15,16 @@ export interface PeriodicElement {
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.scss']
 })
-export class UsuariosComponent {
+export class UsuariosComponent implements OnInit {
 
-  // ICONS
-  faCoffee = faCoffee;
+  constructor(
+    private alerta: MensagemService,
+  ) { }
 
 
+  ngOnInit(): void {
+
+  }
 
 
 }
