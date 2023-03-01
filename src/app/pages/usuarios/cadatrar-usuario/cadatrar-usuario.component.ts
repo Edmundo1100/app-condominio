@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUsuario } from '../../../interfaces/IUsuario';
 import { FormularioService } from '../../../services/formulario.service';
+import { MensagemService } from '../../../services/mensagem.service';
 import { UsuarioService } from '../../../services/usuario.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class CadatrarUsuarioComponent {
   constructor(private formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
     private router: Router,
-    private formularioService: FormularioService
+    private formularioService: FormularioService,
+    private alerta: MensagemService,
   ) { }
 
   ngOnInit(): void {
@@ -37,19 +39,12 @@ export class CadatrarUsuarioComponent {
     var usuario = this.formUsuario.getRawValue() as IUsuario;
     this.usuarioService.salvar(usuario).subscribe({
       next: value => this.usuarioSalvoSucess(),
-      error: error => this.alertaErro(error.error.response)
+      error: error => this.alerta.error(error.error.response)
     })
   }
 
   usuarioSalvoSucess() {
+    this.alerta.success("Criado!!!")
     this.router.navigate(['home']);
   }
-
-  alertaErro(mensagem: any) {
-    console.log('erro');
-
-  }
-
-
-
 }

@@ -1,3 +1,17 @@
-usuarios
-
-<i class="fa-solid fa-users"></i>
+<div class="table-wrapper">
+    <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Usuario</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let usuario of usuarios">
+              <td>{{usuario?.id_usu}}</td>
+              <td>{{usuario?.usuario}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  

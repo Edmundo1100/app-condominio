@@ -1,0 +1,22 @@
+.table-wrapper {
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .table thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }
+  

@@ -34,6 +34,10 @@ export class UsuarioService {
     this.router.navigate(['login']);
   }
 
+  listarTodos(): Observable<any>{
+    return this.httpClient.get<any>(apiUrlUsuario + "/listarTodos")
+  }
+
   // obterUsuarioLogado() {
   //   const usuario = localStorage.getItem('usuario');
   //   if (usuario) {
