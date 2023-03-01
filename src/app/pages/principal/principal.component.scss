@@ -1,13 +1,15 @@
 .box-menu-bar {
   margin-bottom: 5px;
 }
+// =================================================================
 .box-conteiner {
   display: flex;
 }
 .box-menu-painel {
- 
+ padding: 5px;
 }
 .box-rotas {
+  padding: 5px;
   height: calc(100vh - 75px);
 }
 

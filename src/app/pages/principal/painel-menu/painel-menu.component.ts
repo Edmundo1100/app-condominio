@@ -27,7 +27,7 @@ export class PainelMenuComponent {
           {
             label: 'Novo Usuário',
             icon: 'fa-solid fa-user-plus',
-            routerLink: ['']
+            routerLink: ['usuarios/cadastrarUsuario']
           },
         ]
       },
