@@ -20,7 +20,7 @@ import { MessageService } from 'primeng/api';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

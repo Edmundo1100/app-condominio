@@ -1,30 +1,34 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // PRIMENG
 import { InputTextModule } from 'primeng/inputtext';
-import {PanelModule} from 'primeng/panel';
-import {ButtonModule} from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
+import { ButtonModule } from 'primeng/button';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [FilterPipe],
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     InputTextModule
   ],
   exports: [
     ReactiveFormsModule,
+    
+    //PIPES
+    FilterPipe,
 
     // PRIMENG
     InputTextModule,
     FontAwesomeModule,
     PanelModule,
-    ButtonModule
-  ],
-  // providers: [
-  //   { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
-  // ],
+    ButtonModule,
+    FormsModule,
 
+
+  ],
 })
 export class SharedModule { }

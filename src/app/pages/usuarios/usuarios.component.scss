@@ -1,22 +1,25 @@
 .table-wrapper {
     max-height: 100%;
     overflow-y: scroll;
-  }
-  
-  .table {
+}
+
+.table {
     width: 100%;
     border-collapse: collapse;
-  }
-  
-  .table th,
-  .table td {
+}
+
+.table th,
+.table td {
     padding: 8px;
     border: 1px solid #ddd;
-  }
-  
-  .table thead {
+}
+
+.table thead {
     position: sticky;
     top: 0;
     background-color: #fff;
-  }
-  
+}
+
+.search-bar {
+    margin-bottom: 10px;
+}

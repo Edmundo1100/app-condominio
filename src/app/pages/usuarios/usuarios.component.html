@@ -1,16 +1,20 @@
 <div class="table-wrapper">
+    <div class="search-bar">
+      <label for="search">Pesquisar: </label>
+      <input type="text" id="search" [(ngModel)]="filtro">
+    </div>
     <table class="table">
       <thead>
-          <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Usuario</th>
-          </tr>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Usuario</th>
+        </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let usuario of usuarios">
-              <td>{{usuario?.id_usu}}</td>
-              <td>{{usuario?.usuario}}</td>
-          </tr>
+        <tr *ngFor="let usuario of usuarios | filter:filtro">
+          <td>{{usuario?.id_usu}}</td>
+          <td>{{usuario?.usuario}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
